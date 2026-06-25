@@ -2389,3 +2389,139 @@ body::after {
     justify-self: center;
   }
 }
+
+/* ==========================================================
+   SECURITY SECTION
+========================================================== */
+
+.security {
+  padding-block: 6rem;
+}
+
+.security__container {
+  width: min(100% - 2rem, var(--container-width));
+
+  margin-inline: auto;
+
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.security__content {
+  text-align: center;
+}
+
+.security__badges {
+  margin-top: 2rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.security__visual {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.security-card {
+  padding: 1.75rem;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--color-surface);
+
+  border: 1px solid var(--color-border);
+
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+
+  transition:
+    transform 300ms ease,
+    border-color 300ms ease,
+    box-shadow 300ms ease;
+
+  position: relative;
+  overflow: hidden;
+}
+
+.security-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(0, 245, 255, 0.35);
+
+  box-shadow: 0 10px 30px rgba(0, 245, 255, 0.12);
+}
+
+.security-card::before {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    135deg,
+    rgba(0, 245, 255, 0.04),
+    rgba(124, 92, 255, 0.04)
+  );
+
+  pointer-events: none;
+}
+
+.security-card__icon {
+  width: 70px;
+  height: 70px;
+
+  margin-bottom: 1.25rem;
+
+  display: grid;
+  place-items: center;
+
+  border-radius: 50%;
+
+  background: var(--gradient-neon);
+
+  color: #fff;
+
+  font-size: 1.4rem;
+}
+
+.security-card h3 {
+  margin-bottom: 0.75rem;
+}
+
+.security-card p {
+  color: var(--color-text-muted);
+  line-height: 1.8;
+}
+
+/* ==========================================================
+   RESPONSIVE
+========================================================== */
+
+@media (min-width: 768px) {
+  .security__container {
+    grid-template-columns: 0.9fr 1.1fr;
+  }
+
+  .security__content {
+    text-align: left;
+  }
+
+  .security__badges {
+    justify-content: flex-start;
+  }
+
+  .security__visual {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .security__visual {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
