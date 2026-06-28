@@ -2384,7 +2384,8 @@ body::after {
   .features .section-description,
   .testimonials .section-description,
   .domains .section-description,
-  .pricing .section-description {
+  .pricing .section-description,
+  .comparison .section-description {
     display: flex;
     justify-self: center;
   }
@@ -2697,4 +2698,105 @@ body::after {
   .contact__cta-content {
     text-align: left;
   }
+}
+
+/* ==========================================================
+   HOSTING COMPARISON MATRIX
+========================================================== */
+
+.comparison {
+  padding-block: 6rem;
+}
+
+.comparison__wrapper {
+  background: var(--color-bg);
+  width: min(100% - 2rem, var(--container-width));
+
+  margin-inline: auto;
+
+  padding: 1rem;
+
+  border-radius: var(--radius-xl);
+
+  overflow: hidden;
+}
+
+.comparison__table-container {
+  border-radius: var(--radius-xl);
+  overflow-x: auto;
+}
+
+.comparison__table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 700px;
+}
+
+.comparison__table th,
+.comparison__table td {
+  padding: 1rem;
+
+  text-align: center;
+
+  border-bottom: 1px solid var(--color-border);
+}
+
+.comparison__table th:first-child,
+.comparison__table td:first-child {
+  text-align: left;
+
+  font-weight: 600;
+}
+
+.comparison__table thead th {
+  font-family: var(--font-heading);
+
+  background: rgba(255, 255, 255, 0.03);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 1;
+}
+
+.comparison__table thead span {
+  display: block;
+
+  margin-top: 0.5rem;
+
+  color: #00f5ff;
+
+  font-size: 0.95rem;
+}
+
+.comparison__table tbody tr {
+  transition: background 0.3s ease;
+}
+
+.comparison__table tbody tr:hover {
+  background: rgba(0, 245, 255, 0.05);
+}
+
+.comparison__table .fa-check {
+  color: #00f5ff;
+
+  font-size: 1rem;
+}
+
+.comparison__table .fa-xmark {
+  color: rgba(255, 255, 255, 0.4);
+
+  font-size: 1rem;
+}
+
+/* ==========================================================
+   LIGHT MODE
+========================================================== */
+
+[data-theme="light"] .comparison__table thead th {
+  background: rgba(255, 255, 255, 0.5);
+}
+
+[data-theme="light"] .comparison__table .fa-xmark {
+  color: rgba(0, 0, 0, 0.35);
 }
