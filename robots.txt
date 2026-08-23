@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://secureflow-hosting-dev.netlify.app/sitemap.xml
